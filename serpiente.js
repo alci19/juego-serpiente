@@ -80,14 +80,23 @@ function pintarSerpiente() {
 function cambiarDireccion(direccion) {
 
   // Evitar movimiento en dirección opuesta
-  if (
-    (direccion === "arriba" && direccionActual !== "abajo") ||
-    (direccion === "abajo" && direccionActual !== "arriba") ||
-    (direccion === "izquierda" && direccionActual !== "derecha") ||
-    (direccion === "derecha" && direccionActual !== "izquierda")
-  ) {
-    direccionActual = direccion;
+  if (direccionActual === "derecha" && direccion === "izquierda") {
+    return;
   }
+
+  if (direccionActual === "izquierda" && direccion === "derecha") {
+    return;
+  }
+
+  if (direccionActual === "arriba" && direccion === "abajo") {
+    return;
+  }
+
+  if (direccionActual === "abajo" && direccion === "arriba") {
+    return;
+  }
+
+  direccionActual = direccion;
 }
 
 //Funciones de movieminto
